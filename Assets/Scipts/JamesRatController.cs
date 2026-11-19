@@ -5,16 +5,14 @@ public class JamesRatController : MonoBehaviour {
 
     public GameObject target;
 
-    public Camera cam;
-
     public NavMeshAgent agent;
 
     // Update is called once per frame
     void Update () 
     {
-
-
-
             agent.SetDestination(target.transform.position);
+
+
+
     }
 }
