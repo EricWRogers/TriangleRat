@@ -45,13 +45,14 @@ public class FirstPerson : MonoBehaviour
                 isJumping = true;
             }
         }
+            rb.linearVelocity = transform.TransformDirection(newVelocity);
     }
+
 
     void FixedUpdate()
     {
         
-        rb.linearVelocity = newVelocity;
-
+        
     }
 
     void LateUpdate()
@@ -81,8 +82,10 @@ public class FirstPerson : MonoBehaviour
 
         void OnCollisionStay(Collision col)
         {
+            isJumping = false;
             isGrounded = true;
         }
+
         void OnCollisionExit(Collision col)
         {
             isGrounded = false;
