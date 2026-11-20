@@ -5,19 +5,16 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame() // When a certain action implements "PlayGame()"...
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        /* Scene Management loads scene of current active scene, by using the build index number 
-        plus 1 from build settings; This would mean its loading the next scene after the first one.
-        */
+        // ...it Loads the player scene and logs the change.
+        Debug.Log("Requesting to start game has been received!");
+        SceneManager.LoadScene("PlayerSceneTest");
     }
 
     public void QuitGame() // When a certain action implements "QuitGame()"...
     {
-        // Logs a message to the Unity Console to show it has been received.
+        // ... it exits the whole game and logs the change.
         Debug.Log("Requesting to quit game has been received!");
-
-        Application.Quit(); // Quits the players application of runtime inside the game.
+        Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
-        //Unity Editor goes to aplliations of Play Mode and turns it false to stop playing.
     }
 }
